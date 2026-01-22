@@ -16,4 +16,13 @@ RUN chmod -R 644 /usr/share/fonts/truetype/custom/* && \
 # 설치된 한글 폰트 확인 (빌드 로그에 출력)
 RUN echo "=== Installed Korean Fonts ===" && fc-list :lang=ko
 
+# 디버깅: 복사된 파일 확인
+RUN echo "=== Font files ===" && ls -la /usr/share/fonts/truetype/custom/
+
+# 디버깅: 전체 폰트 목록
+RUN echo "=== All fonts ===" && fc-list
+
+# 디버깅: 한글 폰트
+RUN echo "=== Korean fonts ===" && fc-list :lang=ko
+
 USER node

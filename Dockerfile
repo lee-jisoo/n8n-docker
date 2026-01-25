@@ -10,7 +10,7 @@ RUN echo "=== Font files ===" && ls -la /usr/share/fonts/truetype/custom/
 RUN echo "=== Korean fonts ===" && fc-list :lang=ko
 RUN echo "=== FFmpeg version ===" && ffmpeg -version
 # 커뮤니티 노드 설치
-RUN mkdir -p /home/node/.n8n/nodes && echo "cache-bust-20250125-v4"
+RUN mkdir -p /home/node/.n8n/nodes && echo "cache-bust-20250125-v5"
 WORKDIR /home/node/.n8n/nodes
 RUN npm init -y
 RUN npm install @lee-jisoo/n8n-nodes-mediafx

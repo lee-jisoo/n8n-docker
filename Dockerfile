@@ -9,4 +9,11 @@ RUN fc-cache -fv
 RUN echo "=== Font files ===" && ls -la /usr/share/fonts/truetype/custom/
 RUN echo "=== Korean fonts ===" && fc-list :lang=ko
 RUN echo "=== FFmpeg version ===" && ffmpeg -version
+
+# 커뮤니티 노드 설치
+RUN mkdir -p /home/node/.n8n/nodes
+WORKDIR /home/node/.n8n/nodes
+RUN npm install n8n-nodes-mediafx
+RUN chown -R node:node /home/node/.n8n
+
 USER node
